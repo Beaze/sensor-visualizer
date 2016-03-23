@@ -1,0 +1,12 @@
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+target 'SensorVisualizer_Example', :exclusive => true do
+  pod 'SensorVisualizer', :path => '../'
+end
+
+target 'SensorVisualizer_Tests', :exclusive => true do
+  pod 'SensorVisualizer', :path => '../'
+
+  pod 'FBSnapshotTestCase'
+end
