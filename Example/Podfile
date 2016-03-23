@@ -8,5 +8,5 @@ end
 target 'SensorVisualizer_Tests', :exclusive => true do
   pod 'SensorVisualizer', :path => '../'
 
-  pod 'FBSnapshotTestCase'
+#  pod 'FBSnapshotTestCase'
 end
