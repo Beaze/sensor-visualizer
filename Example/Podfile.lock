@@ -1,0 +1,21 @@
+PODS:
+  - FBSnapshotTestCase (2.0.7):
+    - FBSnapshotTestCase/SwiftSupport (= 2.0.7)
+  - FBSnapshotTestCase/Core (2.0.7)
+  - FBSnapshotTestCase/SwiftSupport (2.0.7):
+    - FBSnapshotTestCase/Core
+  - SensorVisualizer (0.1.0)
+
+DEPENDENCIES:
+  - FBSnapshotTestCase
+  - SensorVisualizer (from `../`)
+
+EXTERNAL SOURCES:
+  SensorVisualizer:
+    :path: ../
+
+SPEC CHECKSUMS:
+  FBSnapshotTestCase: 7e85180d0d141a0cf472352edda7e80d7eaeb547
+  SensorVisualizer: 2530177104844a3565da8185188b34c2f1f118ac
+
+COCOAPODS: 0.39.0
