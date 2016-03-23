@@ -11,11 +11,12 @@ import UIKit
 public class AppWindow: UIWindow {
 
     var ovalView: UIView = {
-        let view = UIView(frame: CGRectMake(0,0,32,32))
-        view.backgroundColor = .redColor()
-        view.layer.borderWidth = 10
-        view.layer.borderColor = UIColor.greenColor().CGColor
+        let view = UIView(frame: CGRectMake(0,0,40,40))
+        view.layer.backgroundColor = UIColor.redColor().CGColor
+        view.layer.borderWidth = 1
+        view.layer.borderColor = UIColor.redColor().CGColor
         view.layer.cornerRadius = view.frame.height / 2
+        view.layer.opacity = 0.1
         return view
     }()
     
@@ -33,16 +34,10 @@ public class AppWindow: UIWindow {
     
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        configureWindow()
     }
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
-        configureWindow()
-    }
-    
-    func configureWindow() {
-        
     }
     
     // MARK: - Handle Events
@@ -53,45 +48,56 @@ public class AppWindow: UIWindow {
             return
         }
         
+        let timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+
         for touch in touches {
             switch touch.phase {
             case .Began:
                 ovalView.center = touch.locationInView(self.window)
                 overlayWindow.addSubview(ovalView)
-                
-                UIView.animateWithDuration(0.3, delay: 0, usingSpringWithDamping: 2.0, initialSpringVelocity: 0.1, options: UIViewAnimationOptions.CurveEaseIn, animations: {
-                        self.ovalView.transform = CGAffineTransformMakeScale(0.5, 0.5)
-                    
-                    }, completion: nil)
 
+                let opacityAnimation = CABasicAnimation(keyPath: "opacity")
+                opacityAnimation.toValue = 0.7
                 
+                let borderAnimation = CABasicAnimation(keyPath: "borderWidth")
+                borderAnimation.toValue = 24
+                
+                let scaleAnimation = CABasicAnimation(keyPath: "transform.scale")
+                scaleAnimation.toValue = 0.4
+                
+                let group = CAAnimationGroup()
+                group.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+                group.duration = 0.1
+                group.removedOnCompletion = false
+                group.fillMode = kCAFillModeForwards
+                group.animations = [borderAnimation, scaleAnimation, opacityAnimation]
+                
+                ovalView.layer.addAnimation(group, forKey: "touchZoomIn")
             case .Moved:
+                print("moved")
                 ovalView.center = touch.locationInView(self.window)
             case .Stationary:
                 print("stationary")
             case .Ended, .Cancelled:
+                ovalView.layer.backgroundColor = UIColor.clearColor().CGColor
+                let opacityAnimation = CABasicAnimation(keyPath: "opacity")
+                opacityAnimation.toValue = 0.2
                 
-                UIView.animateWithDuration(0.3, delay: 0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0.3, options: UIViewAnimationOptions.CurveEaseIn, animations: {
-                    self.ovalView.backgroundColor = .clearColor()
-                    self.ovalView.layer.borderWidth = 0.6
-                    self.ovalView.layer.borderColor = UIColor(red: 0, green: 1, blue: 0, alpha: 0.4).CGColor
-                    self.ovalView.transform = CGAffineTransformMakeScale(1.4, 1.4)
-                    
-                    }, completion: { (Bool) in
-                        self.ovalView.removeFromSuperview()
-                        self.ovalView.backgroundColor = .redColor()
-                        self.ovalView.layer.borderWidth = 10
-                        self.ovalView.layer.borderColor = UIColor.greenColor().CGColor
-                })
+                let borderAnimation = CABasicAnimation(keyPath: "borderWidth")
+                borderAnimation.toValue = 0
                 
+                let scaleAnimation = CABasicAnimation(keyPath: "transform.scale")
+                scaleAnimation.toValue = 1.4
                 
-//                UIView.animateWithDuration(0.3, animations: {
-//                    self.ovalView.transform =
-//                }, completion:
+                let group = CAAnimationGroup()
+                group.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+                group.duration = 0.3
+                group.removedOnCompletion = false
+                group.fillMode = kCAFillModeForwards
+                group.animations = [borderAnimation, scaleAnimation, opacityAnimation]
                 
+                ovalView.layer.addAnimation(group, forKey: "touchZoomOut")
             }
         }
     }
-    
-    
 }
