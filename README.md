@@ -11,6 +11,21 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
+## Sensors
+
+- [ ] Tap Screen
+- [ ] Long Press
+- [ ] Pan Gesture
+- [ ] Force Touch
+- [ ] Phone charging / not charing
+- [ ] WiFi
+- [ ] Bluetooth
+- [ ] GPS
+- [ ] Notification
+- [ ] Audio Jack connection
+- [ ] Toggle Vibrate
+- [ ] Shake Phone
+
 ## Installation
 
 SensorVisualizer is available through [CocoaPods](http://cocoapods.org). To install
