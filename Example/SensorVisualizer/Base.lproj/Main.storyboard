@@ -21,9 +21,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="Z2u-Xh-tYr" kind="show" id="xWi-pE-c4n"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -34,6 +31,9 @@
                     <navigationItem key="navigationItem" title="Sensor Visualizer" id="ILc-CA-Dna">
                         <barButtonItem key="rightBarButtonItem" title="Item" id="ll4-Z9-QJj"/>
                     </navigationItem>
+                    <connections>
+                        <segue destination="Z2u-Xh-tYr" kind="show" action="showDetailViewController:sender:" id="BXG-BY-hDr"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J2g-bu-c63" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -55,7 +55,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wRQ-Jh-IAo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1801" y="213"/>
+            <point key="canvasLocation" x="1913" y="-136"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pgg-2q-oQ1">

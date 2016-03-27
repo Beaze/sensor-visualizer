@@ -10,7 +10,7 @@ import UIKit
 
 public class AppWindow: UIWindow {
 
-    var ovalView: UIView = {
+    var touchPointView: UIView = {
         let view = UIView(frame: CGRectMake(0,0,40,40))
         view.layer.backgroundColor = UIColor.redColor().CGColor
         view.layer.borderWidth = 1
@@ -20,7 +20,7 @@ public class AppWindow: UIWindow {
         return view
     }()
     
-    var overlayWindow: UIWindow = {
+    var visualizationWindow: UIWindow = {
         let window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window.userInteractionEnabled = false
         window.windowLevel = UIWindowLevelStatusBar
@@ -53,8 +53,8 @@ public class AppWindow: UIWindow {
         for touch in touches {
             switch touch.phase {
             case .Began:
-                ovalView.center = touch.locationInView(self.window)
-                overlayWindow.addSubview(ovalView)
+                touchPointView.center = touch.locationInView(self.window)
+                visualizationWindow.addSubview(touchPointView)
 
                 let opacityAnimation = CABasicAnimation(keyPath: "opacity")
                 opacityAnimation.toValue = 0.7
@@ -72,14 +72,13 @@ public class AppWindow: UIWindow {
                 group.fillMode = kCAFillModeForwards
                 group.animations = [borderAnimation, scaleAnimation, opacityAnimation]
                 
-                ovalView.layer.addAnimation(group, forKey: "touchZoomIn")
+                touchPointView.layer.addAnimation(group, forKey: "touchZoomIn")
             case .Moved:
-                print("moved")
-                ovalView.center = touch.locationInView(self.window)
+                touchPointView.center = touch.locationInView(self.window)
             case .Stationary:
-                print("stationary")
+                debugPrint("stationary")
             case .Ended, .Cancelled:
-                ovalView.layer.backgroundColor = UIColor.clearColor().CGColor
+                touchPointView.layer.backgroundColor = UIColor.clearColor().CGColor
                 let opacityAnimation = CABasicAnimation(keyPath: "opacity")
                 opacityAnimation.toValue = 0.2
                 
@@ -96,7 +95,7 @@ public class AppWindow: UIWindow {
                 group.fillMode = kCAFillModeForwards
                 group.animations = [borderAnimation, scaleAnimation, opacityAnimation]
                 
-                ovalView.layer.addAnimation(group, forKey: "touchZoomOut")
+                touchPointView.layer.addAnimation(group, forKey: "touchZoomOut")
             }
         }
     }
