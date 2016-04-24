@@ -9,16 +9,6 @@
 import UIKit
 
 public class AppWindow: UIWindow {
-
-    var touchPointView: UIView = {
-        let view = UIView(frame: CGRectMake(0,0,40,40))
-        view.layer.backgroundColor = UIColor.redColor().CGColor
-        view.layer.borderWidth = 1
-        view.layer.borderColor = UIColor.redColor().CGColor
-        view.layer.cornerRadius = view.frame.height / 2
-        view.layer.opacity = 0.1
-        return view
-    }()
     
     var visualizationWindow: UIWindow = {
         let window = UIWindow(frame: UIScreen.mainScreen().bounds)
@@ -30,6 +20,9 @@ public class AppWindow: UIWindow {
         return window
     }()
     
+    
+    
+    var touchPointViews = [UITouch: UIView]()
     // MARK: - Initializers
     
     public required init?(coder aDecoder: NSCoder) {
@@ -53,7 +46,10 @@ public class AppWindow: UIWindow {
         for touch in touches {
             switch touch.phase {
             case .Began:
+                let touchPointView = self.newTouchPointView()
                 touchPointView.center = touch.locationInView(self.window)
+                
+                touchPointViews[touch] = touchPointView
                 visualizationWindow.addSubview(touchPointView)
 
                 let opacityAnimation = CABasicAnimation(keyPath: "opacity")
@@ -74,11 +70,11 @@ public class AppWindow: UIWindow {
                 
                 touchPointView.layer.addAnimation(group, forKey: "touchZoomIn")
             case .Moved:
-                touchPointView.center = touch.locationInView(self.window)
+                touchPointViews[touch]?.center = touch.locationInView(self.window)
             case .Stationary:
-                debugPrint("stationary")
+                break
             case .Ended, .Cancelled:
-                touchPointView.layer.backgroundColor = UIColor.clearColor().CGColor
+                touchPointViews[touch]?.layer.backgroundColor = UIColor.clearColor().CGColor
                 let opacityAnimation = CABasicAnimation(keyPath: "opacity")
                 opacityAnimation.toValue = 0.2
                 
@@ -95,8 +91,21 @@ public class AppWindow: UIWindow {
                 group.fillMode = kCAFillModeForwards
                 group.animations = [borderAnimation, scaleAnimation, opacityAnimation]
                 
-                touchPointView.layer.addAnimation(group, forKey: "touchZoomOut")
+                touchPointViews[touch]?.layer.addAnimation(group, forKey: "touchZoomOut")
+                touchPointViews.removeValueForKey(touch)
             }
         }
+    }
+    
+    // MARK: - Private
+    
+    private func newTouchPointView() -> UIView {
+        let view = UIView(frame: CGRectMake(0,0,40,40))
+        view.layer.backgroundColor = UIColor.redColor().CGColor
+        view.layer.borderWidth = 1
+        view.layer.borderColor = UIColor.redColor().CGColor
+        view.layer.cornerRadius = view.frame.height / 2
+        view.layer.opacity = 0.1
+        return view
     }
 }
