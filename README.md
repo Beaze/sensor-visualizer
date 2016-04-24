@@ -14,7 +14,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 ## Sensors
 
 - [x] Single Tap Screen
-- [ ] Multiple Tap Screen
+- [x] Multiple Tap Screen
 - [x] Long Press
 - [x] Pan Gesture
 - [ ] Force Touch

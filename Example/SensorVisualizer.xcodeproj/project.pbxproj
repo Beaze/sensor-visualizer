@@ -15,6 +15,7 @@
 		8AB2CB3A7B26A359DF117C26 /* Pods_SensorVisualizer_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C30FC3BC21A261041279ED02 /* Pods_SensorVisualizer_Tests.framework */; };
 		DBCBE281414EE7377904841C /* Pods_SensorVisualizer_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F276996AE616236252B7B309 /* Pods_SensorVisualizer_Example.framework */; };
 		E69951951CA21E8C00AF2300 /* OptionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69951941CA21E8C00AF2300 /* OptionsTableViewController.swift */; };
+		E6F187F51CCD449700A526E5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6F187F41CCD449700A526E5 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		C6B5C8661EC2EDDA6C8576B7 /* Pods-SensorVisualizer_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SensorVisualizer_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SensorVisualizer_Tests/Pods-SensorVisualizer_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		D13EE546B91D15C601D1C231 /* Pods-SensorVisualizer_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SensorVisualizer_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SensorVisualizer_Example/Pods-SensorVisualizer_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		E69951941CA21E8C00AF2300 /* OptionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsTableViewController.swift; sourceTree = "<group>"; };
+		E6F187F41CCD449700A526E5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		F276996AE616236252B7B309 /* Pods_SensorVisualizer_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SensorVisualizer_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF6821F6BAD5A16A244F69BD /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -54,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6F187F51CCD449700A526E5 /* MapKit.framework in Frameworks */,
 				DBCBE281414EE7377904841C /* Pods_SensorVisualizer_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -83,6 +86,7 @@
 		1E719A30203347AD9DD48B20 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E6F187F41CCD449700A526E5 /* MapKit.framework */,
 				F276996AE616236252B7B309 /* Pods_SensorVisualizer_Example.framework */,
 				C30FC3BC21A261041279ED02 /* Pods_SensorVisualizer_Tests.framework */,
 			);
