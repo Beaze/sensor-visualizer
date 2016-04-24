@@ -12,7 +12,7 @@ let resuseIdentifer = "Option Cell"
 
 class OptionsTableViewController: UITableViewController {
 
-    let options = ["Touches"]
+    let options = ["Touches", "Map"]
     
     // MARK: - UITableViewDataSource
 
@@ -32,6 +32,8 @@ class OptionsTableViewController: UITableViewController {
         switch indexPath.row {
         case 0:
             self.performSegueWithIdentifier("Show Touches", sender: self)
+        case 1:
+            self.performSegueWithIdentifier("Show Map", sender: self)
         default:
             break
         }
