@@ -14,10 +14,10 @@ class OptionsTableViewController: UITableViewController {
 
     let options = ["Touches"]
     
-    // MARK: - Table view data source
+    // MARK: - UITableViewDataSource
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return options.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -26,4 +26,14 @@ class OptionsTableViewController: UITableViewController {
         return cell
     }
 
+    // MARK: - UITableViewDelegate
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        switch indexPath.row {
+        case 0:
+            self.performSegueWithIdentifier("Show Touches", sender: self)
+        default:
+            break
+        }
+    }
 }
