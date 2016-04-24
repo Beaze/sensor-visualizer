@@ -70,7 +70,21 @@ public class AppWindow: UIWindow {
                 
                 touchPointView.layer.addAnimation(group, forKey: "touchZoomIn")
             case .Moved:
-                touchPointViews[touch]?.center = touch.locationInView(self.window)
+                guard let touchView = touchPointViews[touch] else {
+                    continue
+                }
+                touchView.center = touch.locationInView(self.window)
+                if #available(iOS 9.0, *) {
+                    if let animationGroup = touchView.layer.animationForKey("touchZoomIn") as? CAAnimationGroup,
+                        let animations = animationGroup.animations as? [CABasicAnimation],
+                        let scaleAnimation = animations.filter({ $0.keyPath == "transform.scale" }).first
+                        where traitCollection.forceTouchCapability == .Available {
+                        
+                        scaleAnimation.toValue = touch.force
+                        scaleAnimation.removedOnCompletion = false
+                        touchView.layer.addAnimation(scaleAnimation, forKey: "3D Touch")
+                    }
+                }
             case .Stationary:
                 break
             case .Ended, .Cancelled:

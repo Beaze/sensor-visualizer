@@ -17,7 +17,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 - [x] Multiple Tap Screen
 - [x] Long Press
 - [x] Pan Gesture
-- [ ] 3D Touch
+- [x] 3D Touch
 - [ ] Phone charging / not charing
 - [ ] WiFi
 - [ ] Bluetooth
