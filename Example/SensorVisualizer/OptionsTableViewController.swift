@@ -12,7 +12,7 @@ let resuseIdentifer = "Option Cell"
 
 class OptionsTableViewController: UITableViewController {
 
-    let options = ["Touches", "Map"]
+    let options = ["Touches", "Map", "Sliders"]
     
     // MARK: - UITableViewDataSource
 
@@ -29,13 +29,7 @@ class OptionsTableViewController: UITableViewController {
     // MARK: - UITableViewDelegate
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        switch indexPath.row {
-        case 0:
-            self.performSegueWithIdentifier("Show Touches", sender: self)
-        case 1:
-            self.performSegueWithIdentifier("Show Map", sender: self)
-        default:
-            break
-        }
+        let option = options[indexPath.row]
+        self.performSegueWithIdentifier("Show \(option)", sender: self)
     }
 }

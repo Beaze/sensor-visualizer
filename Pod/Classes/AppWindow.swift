@@ -8,9 +8,13 @@
 
 import UIKit
 
+public protocol AppWindowDelegate {
+    func touchColor() -> UIColor?
+}
+
 public class AppWindow: UIWindow {
     
-    var visualizationWindow: UIWindow = {
+    private var visualizationWindow: UIWindow = {
         let window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window.userInteractionEnabled = false
         window.windowLevel = UIWindowLevelStatusBar
@@ -19,10 +23,9 @@ public class AppWindow: UIWindow {
         window.rootViewController = UIViewController()
         return window
     }()
+    private var touchPointViews = [UITouch: UIView]()
+    public var delegate: AppWindowDelegate?
     
-    
-    
-    var touchPointViews = [UITouch: UIView]()
     // MARK: - Initializers
     
     public required init?(coder aDecoder: NSCoder) {
@@ -74,17 +77,7 @@ public class AppWindow: UIWindow {
                     continue
                 }
                 touchView.center = touch.locationInView(self.window)
-                if #available(iOS 9.0, *) {
-                    if let animationGroup = touchView.layer.animationForKey("touchZoomIn") as? CAAnimationGroup,
-                        let animations = animationGroup.animations as? [CABasicAnimation],
-                        let scaleAnimation = animations.filter({ $0.keyPath == "transform.scale" }).first
-                        where traitCollection.forceTouchCapability == .Available {
-                        
-                        scaleAnimation.toValue = touch.force
-                        scaleAnimation.removedOnCompletion = false
-                        touchView.layer.addAnimation(scaleAnimation, forKey: "3D Touch")
-                    }
-                }
+
             case .Stationary:
                 break
             case .Ended, .Cancelled:
@@ -114,10 +107,11 @@ public class AppWindow: UIWindow {
     // MARK: - Private
     
     private func newTouchPointView() -> UIView {
-        let view = UIView(frame: CGRectMake(0,0,40,40))
-        view.layer.backgroundColor = UIColor.redColor().CGColor
+        let view = UIView(frame: CGRectMake(0,0,64,64))
+        view.layer.backgroundColor = delegate?.touchColor()?.CGColor ?? view.tintColor.CGColor
+            UIColor.redColor().CGColor
         view.layer.borderWidth = 1
-        view.layer.borderColor = UIColor.redColor().CGColor
+        view.layer.borderColor = delegate?.touchColor()?.CGColor ?? view.tintColor.CGColor
         view.layer.cornerRadius = view.frame.height / 2
         view.layer.opacity = 0.1
         return view

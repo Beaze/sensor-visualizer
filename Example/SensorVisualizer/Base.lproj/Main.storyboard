@@ -15,12 +15,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Option Cell" id="0yO-91-c7W">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Option Cell" textLabel="BLA-nn-eZ0" style="IBUITableViewCellStyleDefault" id="0yO-91-c7W">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0yO-91-c7W" id="qoq-cu-GfC">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BLA-nn-eZ0">
+                                            <rect key="frame" x="15" y="0.0" width="570" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -29,12 +38,11 @@
                             <outlet property="delegate" destination="mje-lQ-dts" id="27g-Jo-WR8"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Playground" id="ILc-CA-Dna">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="ll4-Z9-QJj"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Playground" id="ILc-CA-Dna"/>
                     <connections>
                         <segue destination="Z2u-Xh-tYr" kind="show" identifier="Show Touches" id="mbO-oT-yxL"/>
                         <segue destination="SSX-5Y-fmQ" kind="show" identifier="Show Map" id="Ip2-kY-JeV"/>
+                        <segue destination="06f-hV-K8y" kind="show" identifier="Show Sliders" id="k0h-4P-doC"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J2g-bu-c63" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -124,6 +132,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Jh-LH-zxE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1914" y="572"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="bte-ud-KYS">
+            <objects>
+                <viewController id="06f-hV-K8y" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MnW-kS-AjM"/>
+                        <viewControllerLayoutGuide type="bottom" id="dqr-O0-hod"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3dB-oD-JEL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gU7-RC-Jms" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1913" y="1294"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pgg-2q-oQ1">
