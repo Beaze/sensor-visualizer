@@ -1,9 +1,10 @@
 # SensorVisualizer
 
-[![CI Status](http://img.shields.io/travis/Joe Blau/SensorVisualizer.svg?style=flat)](https://travis-ci.org/Joe Blau/SensorVisualizer)
+[![BuddyBuild](https://dashboard.buddybuild.com/api/statusImage?appID=573bca5b6154260100a01253&branch=master&build=latest)](https://dashboard.buddybuild.com/apps/573bca5b6154260100a01253/build/latest)
 [![Version](https://img.shields.io/cocoapods/v/SensorVisualizer.svg?style=flat)](http://cocoapods.org/pods/SensorVisualizer)
 [![License](https://img.shields.io/cocoapods/l/SensorVisualizer.svg?style=flat)](http://cocoapods.org/pods/SensorVisualizer)
 [![Platform](https://img.shields.io/cocoapods/p/SensorVisualizer.svg?style=flat)](http://cocoapods.org/pods/SensorVisualizer)
+[![codebeat badge](https://codebeat.co/badges/ec07ca6f-abd0-4a63-b340-ac616c832d56)](https://codebeat.co/projects/github-com-joeblau-sensorvisualizer)
 
 ## Usage
 

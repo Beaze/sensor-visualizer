@@ -26,7 +26,7 @@
                                             <rect key="frame" x="15" y="0.0" width="570" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -42,7 +42,7 @@
                     <connections>
                         <segue destination="Z2u-Xh-tYr" kind="show" identifier="Show Touches" id="mbO-oT-yxL"/>
                         <segue destination="SSX-5Y-fmQ" kind="show" identifier="Show Map" id="Ip2-kY-JeV"/>
-                        <segue destination="06f-hV-K8y" kind="show" identifier="Show Sliders" id="k0h-4P-doC"/>
+                        <segue destination="06f-hV-K8y" kind="show" identifier="Show Panning" id="k0h-4P-doC"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J2g-bu-c63" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -81,6 +81,9 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nnM-WM-dlR">
                                 <rect key="frame" x="276" y="242" width="51" height="31"/>
                             </switch>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="js8-Gt-iZ9">
+                                <rect key="frame" x="253" y="313" width="94" height="29"/>
+                            </stepper>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -89,8 +92,10 @@
                             <constraint firstItem="hHy-zy-Q1v" firstAttribute="top" secondItem="glv-ma-mJC" secondAttribute="bottom" constant="40" id="OLR-Dc-88q"/>
                             <constraint firstItem="nnM-WM-dlR" firstAttribute="centerX" secondItem="hHy-zy-Q1v" secondAttribute="centerX" id="di4-MN-vNg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="glv-ma-mJC" secondAttribute="trailing" id="fRb-gG-vMw"/>
+                            <constraint firstItem="js8-Gt-iZ9" firstAttribute="centerX" secondItem="nnM-WM-dlR" secondAttribute="centerX" id="hYE-Qc-gQD"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hHy-zy-Q1v" secondAttribute="trailing" id="mDq-G8-m4M"/>
                             <constraint firstAttribute="leadingMargin" secondItem="glv-ma-mJC" secondAttribute="leading" id="pRR-QT-WUA"/>
+                            <constraint firstItem="js8-Gt-iZ9" firstAttribute="top" secondItem="nnM-WM-dlR" secondAttribute="bottom" constant="40" id="rcu-HI-4nI"/>
                             <constraint firstAttribute="leadingMargin" secondItem="hHy-zy-Q1v" secondAttribute="leading" id="uZZ-Dj-mdf"/>
                         </constraints>
                     </view>
@@ -133,10 +138,10 @@
             </objects>
             <point key="canvasLocation" x="1914" y="572"/>
         </scene>
-        <!--View Controller-->
+        <!--Panning-->
         <scene sceneID="bte-ud-KYS">
             <objects>
-                <viewController id="06f-hV-K8y" sceneMemberID="viewController">
+                <viewController id="06f-hV-K8y" customClass="PanningViewController" customModule="SensorVisualizer_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MnW-kS-AjM"/>
                         <viewControllerLayoutGuide type="bottom" id="dqr-O0-hod"/>
@@ -144,8 +149,33 @@
                     <view key="view" contentMode="scaleToFill" id="3dB-oD-JEL">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="aRA-cH-YvK">
+                                <rect key="frame" x="18" y="104" width="564" height="31"/>
+                            </slider>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9f9-cs-FPi">
+                                <rect key="frame" x="20" y="174" width="560" height="406"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" priority="250" constant="560" id="mTc-g5-Z2l"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="aRA-cH-YvK" secondAttribute="trailing" id="1ZK-d5-fod"/>
+                            <constraint firstItem="dqr-O0-hod" firstAttribute="top" secondItem="9f9-cs-FPi" secondAttribute="bottom" constant="20" id="9Et-uU-yUx"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="aRA-cH-YvK" secondAttribute="leading" id="NEh-ZX-PT0"/>
+                            <constraint firstItem="9f9-cs-FPi" firstAttribute="leading" secondItem="3dB-oD-JEL" secondAttribute="leadingMargin" id="Tp2-DU-M5u"/>
+                            <constraint firstItem="aRA-cH-YvK" firstAttribute="top" secondItem="MnW-kS-AjM" secondAttribute="bottom" constant="40" id="clD-oA-U0Z"/>
+                            <constraint firstItem="9f9-cs-FPi" firstAttribute="top" secondItem="aRA-cH-YvK" secondAttribute="bottom" constant="40" id="r1v-Wi-AHt"/>
+                            <constraint firstItem="9f9-cs-FPi" firstAttribute="trailing" secondItem="3dB-oD-JEL" secondAttribute="trailingMargin" id="tSl-Wl-4ie"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Panning" id="5XR-J8-R5r"/>
+                    <connections>
+                        <outlet property="scrollView" destination="9f9-cs-FPi" id="352-AM-JDc"/>
+                        <outlet property="scrollViewWidth" destination="mTc-g5-Z2l" id="4Lv-7H-JFG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gU7-RC-Jms" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

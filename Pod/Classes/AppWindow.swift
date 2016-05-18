@@ -44,67 +44,79 @@ public class AppWindow: UIWindow {
             return
         }
         
-        let timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
-
         for touch in touches {
-            switch touch.phase {
-            case .Began:
-                let touchPointView = self.newTouchPointView()
-                touchPointView.center = touch.locationInView(self.window)
-                
-                touchPointViews[touch] = touchPointView
-                visualizationWindow.addSubview(touchPointView)
-
-                let opacityAnimation = CABasicAnimation(keyPath: "opacity")
-                opacityAnimation.toValue = 0.7
-                
-                let borderAnimation = CABasicAnimation(keyPath: "borderWidth")
-                borderAnimation.toValue = 24
-                
-                let scaleAnimation = CABasicAnimation(keyPath: "transform.scale")
-                scaleAnimation.toValue = 0.4
-                
-                let group = CAAnimationGroup()
-                group.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
-                group.duration = 0.1
-                group.removedOnCompletion = false
-                group.fillMode = kCAFillModeForwards
-                group.animations = [borderAnimation, scaleAnimation, opacityAnimation]
-                
-                touchPointView.layer.addAnimation(group, forKey: "touchZoomIn")
-            case .Moved:
-                guard let touchView = touchPointViews[touch] else {
-                    continue
-                }
-                touchView.center = touch.locationInView(self.window)
-
-            case .Stationary:
-                break
-            case .Ended, .Cancelled:
-                touchPointViews[touch]?.layer.backgroundColor = UIColor.clearColor().CGColor
-                let opacityAnimation = CABasicAnimation(keyPath: "opacity")
-                opacityAnimation.toValue = 0.2
-                
-                let borderAnimation = CABasicAnimation(keyPath: "borderWidth")
-                borderAnimation.toValue = 0
-                
-                let scaleAnimation = CABasicAnimation(keyPath: "transform.scale")
-                scaleAnimation.toValue = 1.4
-                
-                let group = CAAnimationGroup()
-                group.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
-                group.duration = 0.3
-                group.removedOnCompletion = false
-                group.fillMode = kCAFillModeForwards
-                group.animations = [borderAnimation, scaleAnimation, opacityAnimation]
-                
-                touchPointViews[touch]?.layer.addAnimation(group, forKey: "touchZoomOut")
-                touchPointViews.removeValueForKey(touch)
-            }
+            handleTouchVisualization(touch)
         }
     }
     
     // MARK: - Private
+    private func handleTouchVisualization(touch: UITouch) {
+        switch touch.phase {
+        case .Began:
+            createTouchVisualization(touch)
+        case .Moved:
+            moveTouchVisualization(touch)
+        case .Stationary:
+            break
+        case .Ended, .Cancelled:
+            removeTouchVisualization(touch)
+        }
+    }
+    
+    private func createTouchVisualization(touch: UITouch) {
+        let touchPointView = self.newTouchPointView()
+        touchPointView.center = touch.locationInView(self.window)
+        
+        touchPointViews[touch] = touchPointView
+        visualizationWindow.addSubview(touchPointView)
+        
+        let opacityAnimation = CABasicAnimation(keyPath: "opacity")
+        opacityAnimation.toValue = 0.7
+        
+        let borderAnimation = CABasicAnimation(keyPath: "borderWidth")
+        borderAnimation.toValue = 24
+        
+        let scaleAnimation = CABasicAnimation(keyPath: "transform.scale")
+        scaleAnimation.toValue = 0.4
+        
+        let group = CAAnimationGroup()
+        group.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+        group.duration = 0.1
+        group.removedOnCompletion = false
+        group.fillMode = kCAFillModeForwards
+        group.animations = [borderAnimation, scaleAnimation, opacityAnimation]
+        
+        touchPointView.layer.addAnimation(group, forKey: "touchZoomIn")
+    }
+    
+    private func moveTouchVisualization(touch: UITouch) {
+        guard let touchView = touchPointViews[touch] else {
+            return
+        }
+        touchView.center = touch.locationInView(self.window)
+    }
+    
+    private func removeTouchVisualization(touch: UITouch) {
+        touchPointViews[touch]?.layer.backgroundColor = UIColor.clearColor().CGColor
+        let opacityAnimation = CABasicAnimation(keyPath: "opacity")
+        opacityAnimation.toValue = 0.2
+        
+        let borderAnimation = CABasicAnimation(keyPath: "borderWidth")
+        borderAnimation.toValue = 0
+        
+        let scaleAnimation = CABasicAnimation(keyPath: "transform.scale")
+        scaleAnimation.toValue = 1.4
+        
+        let group = CAAnimationGroup()
+        group.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+        group.duration = 0.3
+        group.removedOnCompletion = false
+        group.fillMode = kCAFillModeForwards
+        group.animations = [borderAnimation, scaleAnimation, opacityAnimation]
+        
+        touchPointViews[touch]?.layer.addAnimation(group, forKey: "touchZoomOut")
+        touchPointViews.removeValueForKey(touch)
+    }
     
     private func newTouchPointView() -> UIView {
         let view = UIView(frame: CGRectMake(0,0,64,64))
