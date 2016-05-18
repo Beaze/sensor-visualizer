@@ -70,22 +70,7 @@ public class AppWindow: UIWindow {
         touchPointViews[touch] = touchPointView
         visualizationWindow.addSubview(touchPointView)
         
-        let opacityAnimation = CABasicAnimation(keyPath: "opacity")
-        opacityAnimation.toValue = 0.7
-        
-        let borderAnimation = CABasicAnimation(keyPath: "borderWidth")
-        borderAnimation.toValue = 24
-        
-        let scaleAnimation = CABasicAnimation(keyPath: "transform.scale")
-        scaleAnimation.toValue = 0.4
-        
-        let group = CAAnimationGroup()
-        group.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
-        group.duration = 0.1
-        group.removedOnCompletion = false
-        group.fillMode = kCAFillModeForwards
-        group.animations = [borderAnimation, scaleAnimation, opacityAnimation]
-        
+        let group = generateBasicAnimations(0.7, borderWidthTo: 24, scaleTo: 0.4, duration: 0.1)
         touchPointView.layer.addAnimation(group, forKey: "touchZoomIn")
     }
     
@@ -98,24 +83,30 @@ public class AppWindow: UIWindow {
     
     private func removeTouchVisualization(touch: UITouch) {
         touchPointViews[touch]?.layer.backgroundColor = UIColor.clearColor().CGColor
+        
+        let group = generateBasicAnimations(0.2, borderWidthTo: 0, scaleTo: 1.4, duration: 0.3)
+        touchPointViews[touch]?.layer.addAnimation(group, forKey: "touchZoomOut")
+        touchPointViews.removeValueForKey(touch)
+    }
+    
+    
+    private func generateBasicAnimations(opacityTo: CGFloat, borderWidthTo: CGFloat, scaleTo: CGFloat, duration: NSTimeInterval) -> CAAnimationGroup {
         let opacityAnimation = CABasicAnimation(keyPath: "opacity")
-        opacityAnimation.toValue = 0.2
+        opacityAnimation.toValue = opacityTo
         
         let borderAnimation = CABasicAnimation(keyPath: "borderWidth")
-        borderAnimation.toValue = 0
+        borderAnimation.toValue = borderWidthTo
         
         let scaleAnimation = CABasicAnimation(keyPath: "transform.scale")
-        scaleAnimation.toValue = 1.4
+        scaleAnimation.toValue = scaleTo
         
         let group = CAAnimationGroup()
         group.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
-        group.duration = 0.3
+        group.duration = duration
         group.removedOnCompletion = false
         group.fillMode = kCAFillModeForwards
         group.animations = [borderAnimation, scaleAnimation, opacityAnimation]
-        
-        touchPointViews[touch]?.layer.addAnimation(group, forKey: "touchZoomOut")
-        touchPointViews.removeValueForKey(touch)
+        return group
     }
     
     private func newTouchPointView() -> UIView {
