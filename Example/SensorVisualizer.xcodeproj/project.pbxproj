@@ -14,6 +14,7 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		BB7F99FF6F81044D47FF4224 /* Pods_SensorVisualizer_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 136A4CAD204690F6B49F75D6 /* Pods_SensorVisualizer_Tests.framework */; };
+		E6125EE51D1F007D00C17D4E /* TouchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6125EE41D1F007D00C17D4E /* TouchesViewController.swift */; };
 		E69141C21CE8C41B00114510 /* PanningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69141C11CE8C41B00114510 /* PanningViewController.swift */; };
 		E69951951CA21E8C00AF2300 /* OptionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69951941CA21E8C00AF2300 /* OptionsTableViewController.swift */; };
 		E6F187F51CCD449700A526E5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6F187F41CCD449700A526E5 /* MapKit.framework */; };
@@ -47,6 +48,7 @@
 		6D0CF2A90C54391E6F2D62C7 /* SensorVisualizer.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SensorVisualizer.podspec; path = ../SensorVisualizer.podspec; sourceTree = "<group>"; };
 		7B3F720B4D89D7514FDE6621 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		923A2F9C3F56FBA54BB8A806 /* Pods-SensorVisualizer_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SensorVisualizer_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SensorVisualizer_Tests/Pods-SensorVisualizer_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		E6125EE41D1F007D00C17D4E /* TouchesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchesViewController.swift; sourceTree = "<group>"; };
 		E69141C11CE8C41B00114510 /* PanningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanningViewController.swift; sourceTree = "<group>"; };
 		E69951941CA21E8C00AF2300 /* OptionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsTableViewController.swift; sourceTree = "<group>"; };
 		E6F187F41CCD449700A526E5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -110,6 +112,7 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				E69951941CA21E8C00AF2300 /* OptionsTableViewController.swift */,
+				E6125EE41D1F007D00C17D4E /* TouchesViewController.swift */,
 				E69141C11CE8C41B00114510 /* PanningViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
@@ -369,6 +372,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6125EE51D1F007D00C17D4E /* TouchesViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				E69951951CA21E8C00AF2300 /* OptionsTableViewController.swift in Sources */,
 				E69141C21CE8C41B00114510 /* PanningViewController.swift in Sources */,

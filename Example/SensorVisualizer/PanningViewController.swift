@@ -10,12 +10,14 @@ import UIKit
 
 class PanningViewController: UIViewController {
 
-    @IBOutlet weak var scrollViewWidth: NSLayoutConstraint!
     @IBOutlet weak var scrollView: UIScrollView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let scrollViewFrame = CGRect(x: 0, y: 0, width: scrollViewWidth.constant, height: 10000)
         
+        scrollView.layoutIfNeeded()
+        
+        let scrollViewFrame = CGRect(x: 0, y: 0, width: scrollView.frame.width, height: 10000)
         scrollView.contentSize = scrollViewFrame.size
         
         let gradient = CAGradientLayer()
