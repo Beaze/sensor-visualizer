@@ -12,7 +12,7 @@ let resuseIdentifer = "Option Cell"
 
 class OptionsTableViewController: UITableViewController {
 
-    let options = ["Touches", "Map", "Panning"]
+    let options = ["Touches", "Map", "Panning", "Web"]
     
     // MARK: - UITableViewDataSource
 

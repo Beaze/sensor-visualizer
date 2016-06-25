@@ -44,6 +44,7 @@
                         <segue destination="Z2u-Xh-tYr" kind="show" identifier="Show Touches" id="mbO-oT-yxL"/>
                         <segue destination="SSX-5Y-fmQ" kind="show" identifier="Show Map" id="Ip2-kY-JeV"/>
                         <segue destination="06f-hV-K8y" kind="show" identifier="Show Panning" id="k0h-4P-doC"/>
+                        <segue destination="q7x-KK-PyP" kind="show" identifier="Show Web" id="bEK-Ji-DxI"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J2g-bu-c63" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -112,7 +113,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wRQ-Jh-IAo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1913" y="-136"/>
+            <point key="canvasLocation" x="-299" y="1047"/>
         </scene>
         <!--Map-->
         <scene sceneID="PcM-aY-lC8">
@@ -144,7 +145,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Jh-LH-zxE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1914" y="572"/>
+            <point key="canvasLocation" x="383" y="1047"/>
         </scene>
         <!--Panning-->
         <scene sceneID="bte-ud-KYS">
@@ -179,7 +180,40 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gU7-RC-Jms" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1913" y="1294"/>
+            <point key="canvasLocation" x="1028" y="1047"/>
+        </scene>
+        <!--Web-->
+        <scene sceneID="0Kn-a9-1MT">
+            <objects>
+                <viewController id="q7x-KK-PyP" customClass="WebViewController" customModule="SensorVisualizer_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VoO-Zr-TuQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="guF-tc-0Zi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Gmc-D3-D58">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qOI-eh-Cvc">
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qOI-eh-Cvc" firstAttribute="leading" secondItem="Gmc-D3-D58" secondAttribute="leading" id="Nf5-IT-JVe"/>
+                            <constraint firstAttribute="trailing" secondItem="qOI-eh-Cvc" secondAttribute="trailing" id="iY3-Nt-ZEG"/>
+                            <constraint firstItem="qOI-eh-Cvc" firstAttribute="top" secondItem="Gmc-D3-D58" secondAttribute="top" id="o6k-9h-anr"/>
+                            <constraint firstItem="guF-tc-0Zi" firstAttribute="top" secondItem="qOI-eh-Cvc" secondAttribute="bottom" id="yFC-Lh-uHo"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Web" id="15E-yD-FeB"/>
+                    <connections>
+                        <outlet property="webView" destination="qOI-eh-Cvc" id="6gQ-uD-YVH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TPl-LE-3Bj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1716" y="1046.6266866566718"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pgg-2q-oQ1">
