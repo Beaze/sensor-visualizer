@@ -16,20 +16,20 @@ class OptionsTableViewController: UITableViewController {
     
     // MARK: - UITableViewDataSource
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return options.count
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(resuseIdentifer, forIndexPath: indexPath)
-        cell.textLabel?.text = options[indexPath.row]
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: resuseIdentifer, for: indexPath)
+        cell.textLabel?.text = options[(indexPath as NSIndexPath).row]
         return cell
     }
 
     // MARK: - UITableViewDelegate
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let option = options[indexPath.row]
-        self.performSegueWithIdentifier("Show \(option)", sender: self)
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let option = options[(indexPath as NSIndexPath).row]
+        self.performSegue(withIdentifier: "Show \(option)", sender: self)
     }
 }

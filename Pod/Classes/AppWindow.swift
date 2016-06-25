@@ -12,7 +12,7 @@ private struct AnimationSettings {
     let opacityTo: CGFloat
     let borderWidthTo: CGFloat
     let scaleTo: CGFloat
-    let duration: NSTimeInterval
+    let duration: TimeInterval
 }
 
 public protocol AppWindowDelegate {
@@ -22,18 +22,18 @@ public protocol AppWindowDelegate {
 public class AppWindow: UIWindow {
     
     private var visualizationWindow: UIWindow = {
-        let window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        window.userInteractionEnabled = false
+        let window = UIWindow(frame: UIScreen.main().bounds)
+        window.isUserInteractionEnabled = false
         window.windowLevel = UIWindowLevelStatusBar
-        window.backgroundColor = .clearColor()
-        window.hidden = false
+        window.backgroundColor = .clear()
+        window.isHidden = false
         window.rootViewController = UIViewController()
         return window
     }()
     private let animationGroup: CAAnimationGroup = {
         let group = CAAnimationGroup()
         group.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
-        group.removedOnCompletion = false
+        group.isRemovedOnCompletion = false
         group.fillMode = kCAFillModeForwards
         return group
     }()
@@ -52,7 +52,7 @@ public class AppWindow: UIWindow {
     
     // MARK: - Handle Events
     
-    public override func sendEvent(event: UIEvent) {
+    public override func sendEvent(_ event: UIEvent) {
         super.sendEvent(event)
         guard let touches = event.allTouches() else {
             return
@@ -64,49 +64,49 @@ public class AppWindow: UIWindow {
     }
     
     // MARK: - Private
-    private func handleTouchVisualization(touch: UITouch) {
+    private func handleTouchVisualization(_ touch: UITouch) {
         switch touch.phase {
-        case .Began:
+        case .began:
             createTouchVisualization(touch)
-        case .Moved:
+        case .moved:
             moveTouchVisualization(touch)
-        case .Stationary:
+        case .stationary:
             break
-        case .Ended, .Cancelled:
+        case .ended, .cancelled:
             removeTouchVisualization(touch)
         }
     }
     
-    private func createTouchVisualization(touch: UITouch) {
+    private func createTouchVisualization(_ touch: UITouch) {
         let touchPointView = self.newTouchPointView()
-        touchPointView.center = touch.locationInView(self.window)
+        touchPointView.center = touch.location(in: self.window)
         
         touchPointViews[touch] = touchPointView
         visualizationWindow.addSubview(touchPointView)
         
         let animationSettings = AnimationSettings(opacityTo: 0.7, borderWidthTo: 24, scaleTo: 0.4, duration: 0.1)
         let group = generateBasicAnimations(animationSettings)
-        touchPointView.layer.addAnimation(group, forKey: "touchZoomIn")
+        touchPointView.layer.add(group, forKey: "touchZoomIn")
     }
     
-    private func moveTouchVisualization(touch: UITouch) {
+    private func moveTouchVisualization(_ touch: UITouch) {
         guard let touchView = touchPointViews[touch] else {
             return
         }
-        touchView.center = touch.locationInView(self.window)
+        touchView.center = touch.location(in: self.window)
     }
     
-    private func removeTouchVisualization(touch: UITouch) {
-        touchPointViews[touch]?.layer.backgroundColor = UIColor.clearColor().CGColor
+    private func removeTouchVisualization(_ touch: UITouch) {
+        touchPointViews[touch]?.layer.backgroundColor = UIColor.clear().cgColor
         
         let animationSettings = AnimationSettings(opacityTo: 0.2, borderWidthTo: 0, scaleTo: 1.4, duration: 0.3)
         let group = generateBasicAnimations(animationSettings)
-        touchPointViews[touch]?.layer.addAnimation(group, forKey: "touchZoomOut")
-        touchPointViews.removeValueForKey(touch)
+        touchPointViews[touch]?.layer.add(group, forKey: "touchZoomOut")
+        touchPointViews.removeValue(forKey: touch)
     }
     
     
-    private func generateBasicAnimations(settings: AnimationSettings) -> CAAnimationGroup {
+    private func generateBasicAnimations(_ settings: AnimationSettings) -> CAAnimationGroup {
         let opacityAnimation = CABasicAnimation(keyPath: "opacity")
         opacityAnimation.toValue = settings.opacityTo
         
@@ -122,11 +122,11 @@ public class AppWindow: UIWindow {
     }
     
     private func newTouchPointView() -> UIView {
-        let view = UIView(frame: CGRectMake(0,0,64,64))
-        view.layer.backgroundColor = delegate?.touchColor()?.CGColor ?? view.tintColor.CGColor
-            UIColor.redColor().CGColor
+        let view = UIView(frame: CGRect(x: 0,y: 0,width: 64,height: 64))
+        view.layer.backgroundColor = delegate?.touchColor()?.cgColor ?? view.tintColor.cgColor
+            UIColor.red().cgColor
         view.layer.borderWidth = 1
-        view.layer.borderColor = delegate?.touchColor()?.CGColor ?? view.tintColor.CGColor
+        view.layer.borderColor = delegate?.touchColor()?.cgColor ?? view.tintColor.cgColor
         view.layer.cornerRadius = view.frame.height / 2
         view.layer.opacity = 0.1
         return view

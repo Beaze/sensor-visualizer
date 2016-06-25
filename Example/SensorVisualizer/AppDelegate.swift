@@ -13,16 +13,16 @@ import SensorVisualizer
 class AppDelegate: UIResponder, UIApplicationDelegate, AppWindowDelegate {
 
     var window: UIWindow? = {
-        return AppWindow(frame: UIScreen.mainScreen().bounds)
+        return AppWindow(frame: UIScreen.main().bounds)
     }()
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         (self.window as? AppWindow)?.delegate = self
         return true
     }
     
     // MARK: - AppWindowDelegate
     func touchColor() -> UIColor? {
-        return UIColor.redColor()
+        return UIColor.red()
     }
 }

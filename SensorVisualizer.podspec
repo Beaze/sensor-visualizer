@@ -1,35 +1,22 @@
-#
-# Be sure to run `pod lib lint SensorVisualizer.podspec' to ensure this is a
-# valid spec before submitting.
-#
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
-#
-
 Pod::Spec.new do |s|
   s.name             = "SensorVisualizer"
   s.version          = "0.1.0"
-  s.summary          = "Visualize Sensors On The iPhone"
+  s.summary          = "Visualize Sensors On iOS Devices"
 
   s.description      = <<-DESC
-                       DESC
+  Visualize sensors such as single taps, multiple taps, long presses,
+  pan gestures, 3D touches, power charging, WiFi connetivity, Bluetooth
+  connectivity, GPS, notifications, vibrations, and phone shaking
+  DESC
 
-  s.homepage         = "https://github.com/joeblau/SensorVisualizer"
+  s.homepage         = "https://github.com/design-utilities/sensor-visualizer"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
   s.author           = { "Joe Blau" => "josephblau@gmail.com" }
-  s.source           = { :git => "https://github.com/joeblau/SensorVisualizer.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/joe_blau'
-
-  s.platform     = :ios, '8.0'
+  s.source           = { :git => "https://github.com/design-utilities/sensor-visualizer.git", :tag => s.version.to_s }
+  s.social_media_url = 'https://twitter.com/joe_blau'
+  s.ios.deployment_target = '8.0'
   s.requires_arc = true
-
   s.source_files = 'Pod/Classes/**/*'
-  s.resource_bundles = {
-    'SensorVisualizer' => ['Pod/Assets/*.png']
-  }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.frameworks = 'UIKit'
 end
