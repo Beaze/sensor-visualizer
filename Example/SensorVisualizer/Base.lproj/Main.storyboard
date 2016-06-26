@@ -45,6 +45,7 @@
                         <segue destination="SSX-5Y-fmQ" kind="show" identifier="Show Map" id="Ip2-kY-JeV"/>
                         <segue destination="06f-hV-K8y" kind="show" identifier="Show Panning" id="k0h-4P-doC"/>
                         <segue destination="q7x-KK-PyP" kind="show" identifier="Show Web" id="bEK-Ji-DxI"/>
+                        <segue destination="SGz-ue-SK4" kind="show" identifier="Show Shake" id="bm4-Mr-89S"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J2g-bu-c63" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -213,7 +214,38 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TPl-LE-3Bj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1716" y="1046.6266866566718"/>
+            <point key="canvasLocation" x="1740" y="1047"/>
+        </scene>
+        <!--Shake-->
+        <scene sceneID="1Z3-qQ-pgQ">
+            <objects>
+                <viewController id="SGz-ue-SK4" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hrT-SR-7Xm"/>
+                        <viewControllerLayoutGuide type="bottom" id="n96-3p-ffb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3dV-aw-raS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DoH-It-01x">
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title=" Shake Phone" image="shake-phone">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DoH-It-01x" firstAttribute="centerX" secondItem="3dV-aw-raS" secondAttribute="centerX" id="Bq0-49-A1r"/>
+                            <constraint firstItem="DoH-It-01x" firstAttribute="centerY" secondItem="3dV-aw-raS" secondAttribute="centerY" id="YP7-BV-wMx"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Shake" id="Mwm-9y-qmD"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a87-4C-EOu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2456.8000000000002" y="1046.6266866566718"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pgg-2q-oQ1">
@@ -232,4 +264,7 @@
             <point key="canvasLocation" x="210" y="213"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="shake-phone" width="48" height="48"/>
+    </resources>
 </document>
