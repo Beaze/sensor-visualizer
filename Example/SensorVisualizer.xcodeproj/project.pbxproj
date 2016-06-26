@@ -18,6 +18,7 @@
 		E6125EE71D1F0DE100C17D4E /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6125EE61D1F0DE100C17D4E /* WebViewController.swift */; };
 		E69141C21CE8C41B00114510 /* PanningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69141C11CE8C41B00114510 /* PanningViewController.swift */; };
 		E69951951CA21E8C00AF2300 /* OptionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69951941CA21E8C00AF2300 /* OptionsTableViewController.swift */; };
+		E6A1120B1D205F2600C3E8F3 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A1120A1D205F2600C3E8F3 /* MapViewController.swift */; };
 		E6F187F51CCD449700A526E5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6F187F41CCD449700A526E5 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		E6125EE61D1F0DE100C17D4E /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		E69141C11CE8C41B00114510 /* PanningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanningViewController.swift; sourceTree = "<group>"; };
 		E69951941CA21E8C00AF2300 /* OptionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsTableViewController.swift; sourceTree = "<group>"; };
+		E6A1120A1D205F2600C3E8F3 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		E6F187F41CCD449700A526E5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		FF6821F6BAD5A16A244F69BD /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,6 +117,7 @@
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				E69951941CA21E8C00AF2300 /* OptionsTableViewController.swift */,
 				E6125EE41D1F007D00C17D4E /* TouchesViewController.swift */,
+				E6A1120A1D205F2600C3E8F3 /* MapViewController.swift */,
 				E69141C11CE8C41B00114510 /* PanningViewController.swift */,
 				E6125EE61D1F0DE100C17D4E /* WebViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
@@ -223,7 +226,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
@@ -376,6 +379,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6125EE51D1F007D00C17D4E /* TouchesViewController.swift in Sources */,
+				E6A1120B1D205F2600C3E8F3 /* MapViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				E69951951CA21E8C00AF2300 /* OptionsTableViewController.swift in Sources */,
 				E6125EE71D1F0DE100C17D4E /* WebViewController.swift in Sources */,
@@ -507,6 +511,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0278EADD1F9B9DC8573CC943 /* Pods-SensorVisualizer_Example.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -524,6 +529,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2D95DAF52C1F22BF07A8A940 /* Pods-SensorVisualizer_Example.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -533,6 +539,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -572,6 +579,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SensorVisualizer_Example.app/SensorVisualizer_Example";
 			};
