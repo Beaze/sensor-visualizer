@@ -18,7 +18,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 - [x] Multiple Tap Screen
 - [x] Long Press
 - [x] Pan Gesture
-- [x] 3D Touch
+- [ ] 3D Touch
 - [ ] Phone charging / not charing
 - [ ] WiFi
 - [ ] Bluetooth
@@ -26,7 +26,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 - [ ] Notification
 - [ ] Audio Jack connection
 - [ ] Toggle Vibrate
-- [ ] Shake Phone
+- [x] Shake Phone
 
 ## Installation
 

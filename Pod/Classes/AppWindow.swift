@@ -8,11 +8,16 @@
 
 import UIKit
 
-private struct AnimationSettings {
+private struct TouchAnimationSettings {
     let opacityTo: CGFloat
     let borderWidthTo: CGFloat
     let scaleTo: CGFloat
     let duration: TimeInterval
+}
+
+private struct ShakeAnimationSettings {
+    let opacityTo: Float
+    let pushIntensity: CGFloat
 }
 
 public protocol AppWindowDelegate {
@@ -28,6 +33,7 @@ public class AppWindow: UIWindow {
         window.backgroundColor = .clear()
         window.isHidden = false
         window.rootViewController = UIViewController()
+        window.rootViewController?.view.frame = UIScreen.main().bounds
         return window
     }()
     private let animationGroup: CAAnimationGroup = {
@@ -38,6 +44,9 @@ public class AppWindow: UIWindow {
         return group
     }()
     private var touchPointViews = [UITouch: UIView]()
+    private var animator: UIDynamicAnimator?
+
+    
     public var delegate: AppWindowDelegate?
     
     // MARK: - Initializers
@@ -63,7 +72,16 @@ public class AppWindow: UIWindow {
         }
     }
     
+    public override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+        if event?.subtype == .motionShake {
+            let animationSettings = ShakeAnimationSettings(opacityTo: 0.4, pushIntensity: 800)
+            shakeViewEffect(animationSettings)
+        }
+    }
+    
     // MARK: - Private
+    
+    // MARK: - Touch Section
     private func handleTouchVisualization(_ touch: UITouch) {
         switch touch.phase {
         case .began:
@@ -84,7 +102,7 @@ public class AppWindow: UIWindow {
         touchPointViews[touch] = touchPointView
         visualizationWindow.addSubview(touchPointView)
         
-        let animationSettings = AnimationSettings(opacityTo: 0.7, borderWidthTo: 24, scaleTo: 0.4, duration: 0.1)
+        let animationSettings = TouchAnimationSettings(opacityTo: 0.7, borderWidthTo: 24, scaleTo: 0.4, duration: 0.1)
         let group = generateBasicAnimations(animationSettings)
         touchPointView.layer.add(group, forKey: "touchZoomIn")
     }
@@ -99,14 +117,14 @@ public class AppWindow: UIWindow {
     private func removeTouchVisualization(_ touch: UITouch) {
         touchPointViews[touch]?.layer.backgroundColor = UIColor.clear().cgColor
         
-        let animationSettings = AnimationSettings(opacityTo: 0.2, borderWidthTo: 0, scaleTo: 1.4, duration: 0.3)
+        let animationSettings = TouchAnimationSettings(opacityTo: 0.2, borderWidthTo: 0, scaleTo: 1.4, duration: 0.3)
         let group = generateBasicAnimations(animationSettings)
         touchPointViews[touch]?.layer.add(group, forKey: "touchZoomOut")
         touchPointViews.removeValue(forKey: touch)
     }
     
     
-    private func generateBasicAnimations(_ settings: AnimationSettings) -> CAAnimationGroup {
+    private func generateBasicAnimations(_ settings: TouchAnimationSettings) -> CAAnimationGroup {
         let opacityAnimation = CABasicAnimation(keyPath: "opacity")
         opacityAnimation.toValue = settings.opacityTo
         
@@ -122,7 +140,7 @@ public class AppWindow: UIWindow {
     }
     
     private func newTouchPointView() -> UIView {
-        let view = UIView(frame: CGRect(x: 0,y: 0,width: 64,height: 64))
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: 64, height: 64))
         view.layer.backgroundColor = delegate?.touchColor()?.cgColor ?? view.tintColor.cgColor
             UIColor.red().cgColor
         view.layer.borderWidth = 1
@@ -130,5 +148,76 @@ public class AppWindow: UIWindow {
         view.layer.cornerRadius = view.frame.height / 2
         view.layer.opacity = 0.1
         return view
+    }
+    
+    // MARK: - Shake Section
+    
+    private func shakeViewEffect(_ settings: ShakeAnimationSettings) {
+        guard let rootView = visualizationWindow.rootViewController?.view,
+            let shakeViewLeft = shakeView(settings),
+            let shakeViewRight = shakeView(settings) else {
+            return
+        }
+        let shakeLeft: (view: UIView, direction: CGFloat) = (view: shakeViewLeft, direction: settings.pushIntensity)
+        let shakeRight : (view: UIView, direction: CGFloat) = (view: shakeViewRight, direction: -settings.pushIntensity)
+        let shakeViews = [shakeLeft, shakeRight]
+
+        animator = UIDynamicAnimator(referenceView: rootView)
+        
+        for shakeView in shakeViews {
+            let attachmentBehavior = shakeAttachmentBehavior(item: shakeView.view, attachedToAnchor: rootView.center)
+            let pushBehavior = shakePushBehavior(items: [shakeView.view], direction: shakeView.direction)
+            animator?.addBehavior(attachmentBehavior)
+            animator?.addBehavior(pushBehavior)
+            
+            self.addSubview(shakeView.view)
+            
+            DispatchQueue.main.after(when: .now() + 2.0, execute: {
+                shakeView.view.removeFromSuperview()
+            })
+        }
+    }
+    
+    private func shakeView(_ settings: ShakeAnimationSettings) -> UIView? {
+        guard let rootView = visualizationWindow.rootViewController?.view  else {
+            return nil
+        }
+        
+        let shakePathLayer = shakePathShapeLayer(rootView.bounds, settings.opacityTo)
+        let shakeView = UIView(frame: rootView.bounds)
+        shakeView.layer.addSublayer(shakePathLayer)
+        rootView.addSubview(shakeView)
+        return shakeView
+    }
+    
+    private func shakePathShapeLayer(_ bounds: CGRect, _ opacityTo: Float) -> CAShapeLayer {
+        let shakePath = UIBezierPath(rect: bounds.insetBy(dx: -100, dy: -100))
+        let maskPath =  UIBezierPath(rect: bounds)
+        shakePath.append(maskPath)
+        shakePath.usesEvenOddFillRule = true
+        
+        let view = UIView(frame: bounds)
+        
+        let fillLayer = CAShapeLayer()
+        fillLayer.path = shakePath.cgPath
+        fillLayer.fillRule = kCAFillRuleEvenOdd
+        fillLayer.fillColor = delegate?.touchColor()?.cgColor ?? view.tintColor.cgColor
+        fillLayer.opacity = opacityTo
+        return fillLayer
+    }
+    
+    // MARK: - UIDynamics Behaviors
+    
+    private func shakeAttachmentBehavior(item: UIDynamicItem, attachedToAnchor: CGPoint) -> UIAttachmentBehavior {
+        let attachmentBehavior = UIAttachmentBehavior(item: item, attachedToAnchor: attachedToAnchor)
+        attachmentBehavior.damping = 0.1
+        attachmentBehavior.frequency = 10.0
+        return attachmentBehavior
+    }
+    
+    private func shakePushBehavior(items: [UIDynamicItem], direction: CGFloat) -> UIPushBehavior {
+        let pushBehavior = UIPushBehavior(items: items, mode: .instantaneous)
+        pushBehavior.pushDirection = CGVector(dx: direction, dy: 0)
+        return pushBehavior
     }
 }
