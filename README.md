@@ -1,6 +1,6 @@
 # SensorVisualizer
 
-[![BuddyBuild](https://dashboard.buddybuild.com/api/statusImage?appID=573bca5b6154260100a01253&branch=master&build=latest)](https://dashboard.buddybuild.com/apps/573bca5b6154260100a01253/build/latest)
+[![BuddyBuild](https://dashboard.buddybuild.com/api/statusImage?appID=577018a6835e5001003dc9be&branch=master&build=latest)](https://dashboard.buddybuild.com/apps/577018a6835e5001003dc9be/build/latest)
 [![Version](https://img.shields.io/cocoapods/v/SensorVisualizer.svg?style=flat)](http://cocoapods.org/pods/SensorVisualizer)
 [![License](https://img.shields.io/cocoapods/l/SensorVisualizer.svg?style=flat)](http://cocoapods.org/pods/SensorVisualizer)
 [![Platform](https://img.shields.io/cocoapods/p/SensorVisualizer.svg?style=flat)](http://cocoapods.org/pods/SensorVisualizer)
