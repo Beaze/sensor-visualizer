@@ -1,12 +1,18 @@
-use_frameworks!
 
 target 'SensorVisualizer_Example' do
+  use_frameworks!
   pod 'SensorVisualizer', :path => '../'
 
-
-  target 'SensorVisualizer_Tests' do
-    inherit! :search_paths 
-
+  target 'SensorVisualizer_ExampleSnapshotTests' do
+    inherit! :search_paths
   end
-end
 
+  target 'SensorVisualizer_ExampleTests' do
+    inherit! :search_paths
+  end
+
+  target 'SensorVisualizer_ExampleUITests' do
+    inherit! :search_paths
+  end
+
+end
