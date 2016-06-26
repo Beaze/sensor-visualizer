@@ -4,7 +4,7 @@
 [![Version](https://img.shields.io/cocoapods/v/SensorVisualizer.svg?style=flat)](http://cocoapods.org/pods/SensorVisualizer)
 [![License](https://img.shields.io/cocoapods/l/SensorVisualizer.svg?style=flat)](http://cocoapods.org/pods/SensorVisualizer)
 [![Platform](https://img.shields.io/cocoapods/p/SensorVisualizer.svg?style=flat)](http://cocoapods.org/pods/SensorVisualizer)
-[![codebeat badge](https://codebeat.co/badges/ec07ca6f-abd0-4a63-b340-ac616c832d56)](https://codebeat.co/projects/github-com-joeblau-sensorvisualizer)
+[![codebeat badge](https://codebeat.co/badges/f4719b41-80b2-4488-9719-45bb1808585c)](https://codebeat.co/projects/github-com-design-utilities-sensor-visualizer)
 
 ## Usage
 

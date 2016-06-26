@@ -44,9 +44,6 @@ public class AppWindow: UIWindow {
         return group
     }()
     private var touchPointViews = [UITouch: UIView]()
-    private var animator: UIDynamicAnimator?
-
-    
     public var delegate: AppWindowDelegate?
     
     // MARK: - Initializers
@@ -68,7 +65,16 @@ public class AppWindow: UIWindow {
         }
         
         for touch in touches {
-            handleTouchVisualization(touch)
+            switch touch.phase {
+            case .began:
+                createTouchVisualization(touch)
+            case .moved:
+                moveTouchVisualization(touch)
+            case .stationary:
+                break
+            case .ended, .cancelled:
+                removeTouchVisualization(touch)
+            }
         }
     }
     
@@ -78,22 +84,8 @@ public class AppWindow: UIWindow {
             shakeViewEffect(animationSettings)
         }
     }
-    
-    // MARK: - Private
-    
-    // MARK: - Touch Section
-    private func handleTouchVisualization(_ touch: UITouch) {
-        switch touch.phase {
-        case .began:
-            createTouchVisualization(touch)
-        case .moved:
-            moveTouchVisualization(touch)
-        case .stationary:
-            break
-        case .ended, .cancelled:
-            removeTouchVisualization(touch)
-        }
-    }
+
+    // MARK: - Create Touch Visualization Helpers
     
     private func createTouchVisualization(_ touch: UITouch) {
         let touchPointView = self.newTouchPointView()
@@ -150,25 +142,21 @@ public class AppWindow: UIWindow {
         return view
     }
     
-    // MARK: - Shake Section
+    // MARK: - Create Shake Visualization Helpers
     
     private func shakeViewEffect(_ settings: ShakeAnimationSettings) {
-        guard let rootView = visualizationWindow.rootViewController?.view,
-            let shakeViewLeft = shakeView(settings),
-            let shakeViewRight = shakeView(settings) else {
+        guard let rootView = visualizationWindow.rootViewController?.view else {
             return
         }
-        let shakeLeft: (view: UIView, direction: CGFloat) = (view: shakeViewLeft, direction: settings.pushIntensity)
-        let shakeRight : (view: UIView, direction: CGFloat) = (view: shakeViewRight, direction: -settings.pushIntensity)
-        let shakeViews = [shakeLeft, shakeRight]
+        
+        let shakeViews = [(view: shakeView(rootView: rootView, settings: settings), direction: settings.pushIntensity),
+                          (view: shakeView(rootView: rootView, settings: settings), direction: -settings.pushIntensity)]
 
-        animator = UIDynamicAnimator(referenceView: rootView)
+        let animator = UIDynamicAnimator(referenceView: rootView)
         
         for shakeView in shakeViews {
-            let attachmentBehavior = shakeAttachmentBehavior(item: shakeView.view, attachedToAnchor: rootView.center)
-            let pushBehavior = shakePushBehavior(items: [shakeView.view], direction: shakeView.direction)
-            animator?.addBehavior(attachmentBehavior)
-            animator?.addBehavior(pushBehavior)
+            animator.addBehavior(shakeAttachmentBehavior(item: shakeView.view, attachedToAnchor: rootView.center))
+            animator.addBehavior(shakePushBehavior(items: [shakeView.view], direction: shakeView.direction))
             
             self.addSubview(shakeView.view)
             
@@ -178,11 +166,7 @@ public class AppWindow: UIWindow {
         }
     }
     
-    private func shakeView(_ settings: ShakeAnimationSettings) -> UIView? {
-        guard let rootView = visualizationWindow.rootViewController?.view  else {
-            return nil
-        }
-        
+    private func shakeView(rootView rootView: UIView, settings: ShakeAnimationSettings) -> UIView {
         let shakePathLayer = shakePathShapeLayer(rootView.bounds, settings.opacityTo)
         let shakeView = UIView(frame: rootView.bounds)
         shakeView.layer.addSublayer(shakePathLayer)
