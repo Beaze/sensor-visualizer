@@ -7,27 +7,49 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23DCC471A81206F593FF7CC1 /* Pods_SensorVisualizer_ExampleSnapshotTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EEAAB5687B32971CD306213 /* Pods_SensorVisualizer_ExampleSnapshotTests.framework */; };
 		5365B4BB018AA515A2F4EC20 /* Pods_SensorVisualizer_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DD58126158A476F9797AE01 /* Pods_SensorVisualizer_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		BB7F99FF6F81044D47FF4224 /* Pods_SensorVisualizer_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 136A4CAD204690F6B49F75D6 /* Pods_SensorVisualizer_Tests.framework */; };
+		B98BDD44CED6B8291BB5722E /* Pods_SensorVisualizer_ExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5103FBC63012A609515D061 /* Pods_SensorVisualizer_ExampleTests.framework */; };
+		E1A304EA4D8188DC94DF5345 /* Pods_SensorVisualizer_ExampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9639D843E7E9E591FCAC16CC /* Pods_SensorVisualizer_ExampleUITests.framework */; };
 		E6125EE51D1F007D00C17D4E /* TouchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6125EE41D1F007D00C17D4E /* TouchesViewController.swift */; };
 		E6125EE71D1F0DE100C17D4E /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6125EE61D1F0DE100C17D4E /* WebViewController.swift */; };
 		E69141C21CE8C41B00114510 /* PanningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69141C11CE8C41B00114510 /* PanningViewController.swift */; };
 		E69951951CA21E8C00AF2300 /* OptionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69951941CA21E8C00AF2300 /* OptionsTableViewController.swift */; };
+		E6A1120B1D205F2600C3E8F3 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A1120A1D205F2600C3E8F3 /* MapViewController.swift */; };
+		E6A1123C1D2063E100C3E8F3 /* SensorVisualizer_ExampleSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A112371D2063E100C3E8F3 /* SensorVisualizer_ExampleSnapshotTests.swift */; };
+		E6A112431D20644200C3E8F3 /* SensorVisualizer_ExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A1123F1D20644200C3E8F3 /* SensorVisualizer_ExampleUITests.swift */; };
+		E6A1124A1D20644E00C3E8F3 /* SensorVisualizer_ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A112461D20644E00C3E8F3 /* SensorVisualizer_ExampleTests.swift */; };
+		E6A1124D1D2065FE00C3E8F3 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E6A112421D20644200C3E8F3 /* Info.plist */; };
+		E6A1124E1D20660500C3E8F3 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E6A112491D20644E00C3E8F3 /* Info.plist */; };
+		E6A1124F1D20660F00C3E8F3 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E6A1123B1D2063E100C3E8F3 /* Info.plist */; };
 		E6F187F51CCD449700A526E5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6F187F41CCD449700A526E5 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		607FACE61AFB9204008FA782 /* PBXContainerItemProxy */ = {
+		E6A112151D2060AE00C3E8F3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 607FACCF1AFB9204008FA782;
-			remoteInfo = SensorVisualizer;
+			remoteInfo = SensorVisualizer_Example;
+		};
+		E6A112231D2060C200C3E8F3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 607FACCF1AFB9204008FA782;
+			remoteInfo = SensorVisualizer_Example;
+		};
+		E6A112311D2060D400C3E8F3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 607FACCF1AFB9204008FA782;
+			remoteInfo = SensorVisualizer_Example;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -35,6 +57,7 @@
 		0278EADD1F9B9DC8573CC943 /* Pods-SensorVisualizer_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SensorVisualizer_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SensorVisualizer_Example/Pods-SensorVisualizer_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		136A4CAD204690F6B49F75D6 /* Pods_SensorVisualizer_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SensorVisualizer_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D95DAF52C1F22BF07A8A940 /* Pods-SensorVisualizer_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SensorVisualizer_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-SensorVisualizer_Example/Pods-SensorVisualizer_Example.release.xcconfig"; sourceTree = "<group>"; };
+		4EEAAB5687B32971CD306213 /* Pods_SensorVisualizer_ExampleSnapshotTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SensorVisualizer_ExampleSnapshotTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		53A7D2061131A1F29C792D39 /* Pods-SensorVisualizer_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SensorVisualizer_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SensorVisualizer_Tests/Pods-SensorVisualizer_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DD58126158A476F9797AE01 /* Pods_SensorVisualizer_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SensorVisualizer_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* SensorVisualizer_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SensorVisualizer_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,16 +66,31 @@
 		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		607FACE51AFB9204008FA782 /* SensorVisualizer_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SensorVisualizer_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		67426D872DFB230667E8E66B /* Pods-SensorVisualizer_ExampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SensorVisualizer_ExampleUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SensorVisualizer_ExampleUITests/Pods-SensorVisualizer_ExampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		67F5E9B6DAB70F4C871D7CCB /* Pods-SensorVisualizer_ExampleSnapshotTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SensorVisualizer_ExampleSnapshotTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SensorVisualizer_ExampleSnapshotTests/Pods-SensorVisualizer_ExampleSnapshotTests.release.xcconfig"; sourceTree = "<group>"; };
 		6D0CF2A90C54391E6F2D62C7 /* SensorVisualizer.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SensorVisualizer.podspec; path = ../SensorVisualizer.podspec; sourceTree = "<group>"; };
+		72E412D0AA78A84E1B65E282 /* Pods-SensorVisualizer_ExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SensorVisualizer_ExampleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SensorVisualizer_ExampleTests/Pods-SensorVisualizer_ExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7422D4C5122947527F9F786E /* Pods-SensorVisualizer_ExampleSnapshotTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SensorVisualizer_ExampleSnapshotTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SensorVisualizer_ExampleSnapshotTests/Pods-SensorVisualizer_ExampleSnapshotTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7B3F720B4D89D7514FDE6621 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		8AD080046431FF9A5A18F615 /* Pods-SensorVisualizer_ExampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SensorVisualizer_ExampleUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SensorVisualizer_ExampleUITests/Pods-SensorVisualizer_ExampleUITests.release.xcconfig"; sourceTree = "<group>"; };
 		923A2F9C3F56FBA54BB8A806 /* Pods-SensorVisualizer_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SensorVisualizer_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SensorVisualizer_Tests/Pods-SensorVisualizer_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		9639D843E7E9E591FCAC16CC /* Pods_SensorVisualizer_ExampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SensorVisualizer_ExampleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5103FBC63012A609515D061 /* Pods_SensorVisualizer_ExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SensorVisualizer_ExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD14F71D9CB6C89723586A8B /* Pods-SensorVisualizer_ExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SensorVisualizer_ExampleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SensorVisualizer_ExampleTests/Pods-SensorVisualizer_ExampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		E6125EE41D1F007D00C17D4E /* TouchesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchesViewController.swift; sourceTree = "<group>"; };
 		E6125EE61D1F0DE100C17D4E /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		E69141C11CE8C41B00114510 /* PanningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanningViewController.swift; sourceTree = "<group>"; };
 		E69951941CA21E8C00AF2300 /* OptionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsTableViewController.swift; sourceTree = "<group>"; };
+		E6A1120A1D205F2600C3E8F3 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		E6A112101D2060AE00C3E8F3 /* SensorVisualizer_ExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SensorVisualizer_ExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6A1121E1D2060C200C3E8F3 /* SensorVisualizer_ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SensorVisualizer_ExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6A1122C1D2060D400C3E8F3 /* SensorVisualizer_ExampleSnapshotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SensorVisualizer_ExampleSnapshotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6A112371D2063E100C3E8F3 /* SensorVisualizer_ExampleSnapshotTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorVisualizer_ExampleSnapshotTests.swift; sourceTree = "<group>"; };
+		E6A1123B1D2063E100C3E8F3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E6A1123F1D20644200C3E8F3 /* SensorVisualizer_ExampleUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorVisualizer_ExampleUITests.swift; sourceTree = "<group>"; };
+		E6A112421D20644200C3E8F3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E6A112461D20644E00C3E8F3 /* SensorVisualizer_ExampleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorVisualizer_ExampleTests.swift; sourceTree = "<group>"; };
+		E6A112491D20644E00C3E8F3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6F187F41CCD449700A526E5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		FF6821F6BAD5A16A244F69BD /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,11 +105,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		607FACE21AFB9204008FA782 /* Frameworks */ = {
+		E6A1120D1D2060AE00C3E8F3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB7F99FF6F81044D47FF4224 /* Pods_SensorVisualizer_Tests.framework in Frameworks */,
+				E1A304EA4D8188DC94DF5345 /* Pods_SensorVisualizer_ExampleUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6A1121B1D2060C200C3E8F3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B98BDD44CED6B8291BB5722E /* Pods_SensorVisualizer_ExampleTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6A112291D2060D400C3E8F3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23DCC471A81206F593FF7CC1 /* Pods_SensorVisualizer_ExampleSnapshotTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +138,9 @@
 				E6F187F41CCD449700A526E5 /* MapKit.framework */,
 				5DD58126158A476F9797AE01 /* Pods_SensorVisualizer_Example.framework */,
 				136A4CAD204690F6B49F75D6 /* Pods_SensorVisualizer_Tests.framework */,
+				4EEAAB5687B32971CD306213 /* Pods_SensorVisualizer_ExampleSnapshotTests.framework */,
+				A5103FBC63012A609515D061 /* Pods_SensorVisualizer_ExampleTests.framework */,
+				9639D843E7E9E591FCAC16CC /* Pods_SensorVisualizer_ExampleUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -93,7 +150,9 @@
 			children = (
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for SensorVisualizer */,
-				607FACE81AFB9204008FA782 /* Tests */,
+				E6A1121F1D2060C200C3E8F3 /* SensorVisualizer_ExampleTests */,
+				E6A1122D1D2060D400C3E8F3 /* SensorVisualizer_ExampleSnapshotTests */,
+				E6A112111D2060AE00C3E8F3 /* SensorVisualizer_ExampleUITests */,
 				607FACD11AFB9204008FA782 /* Products */,
 				1E719A30203347AD9DD48B20 /* Frameworks */,
 				A0DCB29C3013D91D8EFE521B /* Pods */,
@@ -104,7 +163,9 @@
 			isa = PBXGroup;
 			children = (
 				607FACD01AFB9204008FA782 /* SensorVisualizer_Example.app */,
-				607FACE51AFB9204008FA782 /* SensorVisualizer_Tests.xctest */,
+				E6A112101D2060AE00C3E8F3 /* SensorVisualizer_ExampleUITests.xctest */,
+				E6A1121E1D2060C200C3E8F3 /* SensorVisualizer_ExampleTests.xctest */,
+				E6A1122C1D2060D400C3E8F3 /* SensorVisualizer_ExampleSnapshotTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -115,6 +176,7 @@
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				E69951941CA21E8C00AF2300 /* OptionsTableViewController.swift */,
 				E6125EE41D1F007D00C17D4E /* TouchesViewController.swift */,
+				E6A1120A1D205F2600C3E8F3 /* MapViewController.swift */,
 				E69141C11CE8C41B00114510 /* PanningViewController.swift */,
 				E6125EE61D1F0DE100C17D4E /* WebViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
@@ -130,23 +192,6 @@
 			isa = PBXGroup;
 			children = (
 				607FACD41AFB9204008FA782 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		607FACE81AFB9204008FA782 /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				607FACEB1AFB9204008FA782 /* Tests.swift */,
-				607FACE91AFB9204008FA782 /* Supporting Files */,
-			);
-			path = Tests;
-			sourceTree = "<group>";
-		};
-		607FACE91AFB9204008FA782 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				607FACEA1AFB9204008FA782 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -168,8 +213,113 @@
 				2D95DAF52C1F22BF07A8A940 /* Pods-SensorVisualizer_Example.release.xcconfig */,
 				53A7D2061131A1F29C792D39 /* Pods-SensorVisualizer_Tests.debug.xcconfig */,
 				923A2F9C3F56FBA54BB8A806 /* Pods-SensorVisualizer_Tests.release.xcconfig */,
+				7422D4C5122947527F9F786E /* Pods-SensorVisualizer_ExampleSnapshotTests.debug.xcconfig */,
+				67F5E9B6DAB70F4C871D7CCB /* Pods-SensorVisualizer_ExampleSnapshotTests.release.xcconfig */,
+				72E412D0AA78A84E1B65E282 /* Pods-SensorVisualizer_ExampleTests.debug.xcconfig */,
+				BD14F71D9CB6C89723586A8B /* Pods-SensorVisualizer_ExampleTests.release.xcconfig */,
+				67426D872DFB230667E8E66B /* Pods-SensorVisualizer_ExampleUITests.debug.xcconfig */,
+				8AD080046431FF9A5A18F615 /* Pods-SensorVisualizer_ExampleUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		E6A112111D2060AE00C3E8F3 /* SensorVisualizer_ExampleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E6A1123E1D20644200C3E8F3 /* Classes */,
+				E6A112401D20644200C3E8F3 /* Resources */,
+				E6A112411D20644200C3E8F3 /* SupportingFiles */,
+			);
+			path = SensorVisualizer_ExampleUITests;
+			sourceTree = "<group>";
+		};
+		E6A1121F1D2060C200C3E8F3 /* SensorVisualizer_ExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				E6A112451D20644E00C3E8F3 /* Classes */,
+				E6A112471D20644E00C3E8F3 /* Resources */,
+				E6A112481D20644E00C3E8F3 /* SupportingFiles */,
+			);
+			path = SensorVisualizer_ExampleTests;
+			sourceTree = "<group>";
+		};
+		E6A1122D1D2060D400C3E8F3 /* SensorVisualizer_ExampleSnapshotTests */ = {
+			isa = PBXGroup;
+			children = (
+				E6A112361D2063E100C3E8F3 /* Classes */,
+				E6A112391D2063E100C3E8F3 /* Resources */,
+				E6A1123A1D2063E100C3E8F3 /* SupportingFiles */,
+			);
+			path = SensorVisualizer_ExampleSnapshotTests;
+			sourceTree = "<group>";
+		};
+		E6A112361D2063E100C3E8F3 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E6A112371D2063E100C3E8F3 /* SensorVisualizer_ExampleSnapshotTests.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		E6A112391D2063E100C3E8F3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E6A1123A1D2063E100C3E8F3 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				E6A1123B1D2063E100C3E8F3 /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		E6A1123E1D20644200C3E8F3 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E6A1123F1D20644200C3E8F3 /* SensorVisualizer_ExampleUITests.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		E6A112401D20644200C3E8F3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E6A112411D20644200C3E8F3 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				E6A112421D20644200C3E8F3 /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		E6A112451D20644E00C3E8F3 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E6A112461D20644E00C3E8F3 /* SensorVisualizer_ExampleTests.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		E6A112471D20644E00C3E8F3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E6A112481D20644E00C3E8F3 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				E6A112491D20644E00C3E8F3 /* Info.plist */,
+			);
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,25 +345,66 @@
 			productReference = 607FACD01AFB9204008FA782 /* SensorVisualizer_Example.app */;
 			productType = "com.apple.product-type.application";
 		};
-		607FACE41AFB9204008FA782 /* SensorVisualizer_Tests */ = {
+		E6A1120F1D2060AE00C3E8F3 /* SensorVisualizer_ExampleUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "SensorVisualizer_Tests" */;
+			buildConfigurationList = E6A112171D2060AE00C3E8F3 /* Build configuration list for PBXNativeTarget "SensorVisualizer_ExampleUITests" */;
 			buildPhases = (
-				5F1D0E62280AA716DFE69EFB /* [CP] Check Pods Manifest.lock */,
-				607FACE11AFB9204008FA782 /* Sources */,
-				607FACE21AFB9204008FA782 /* Frameworks */,
-				607FACE31AFB9204008FA782 /* Resources */,
-				5AD764635FCA5F598FEB068E /* [CP] Embed Pods Frameworks */,
-				C2B4617BC911305958BEAD96 /* [CP] Copy Pods Resources */,
+				26209023AFB74C47C0F6DFC3 /* [CP] Check Pods Manifest.lock */,
+				E6A1120C1D2060AE00C3E8F3 /* Sources */,
+				E6A1120D1D2060AE00C3E8F3 /* Frameworks */,
+				E6A1120E1D2060AE00C3E8F3 /* Resources */,
+				2CDC5A46AE62EFA7EBFB1166 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				607FACE71AFB9204008FA782 /* PBXTargetDependency */,
+				E6A112161D2060AE00C3E8F3 /* PBXTargetDependency */,
 			);
-			name = SensorVisualizer_Tests;
-			productName = Tests;
-			productReference = 607FACE51AFB9204008FA782 /* SensorVisualizer_Tests.xctest */;
+			name = SensorVisualizer_ExampleUITests;
+			productName = SensorVisualizer_ExampleUITests;
+			productReference = E6A112101D2060AE00C3E8F3 /* SensorVisualizer_ExampleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		E6A1121D1D2060C200C3E8F3 /* SensorVisualizer_ExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E6A112251D2060C200C3E8F3 /* Build configuration list for PBXNativeTarget "SensorVisualizer_ExampleTests" */;
+			buildPhases = (
+				2D5CC2E11A37D299588A3836 /* [CP] Check Pods Manifest.lock */,
+				E6A1121A1D2060C200C3E8F3 /* Sources */,
+				E6A1121B1D2060C200C3E8F3 /* Frameworks */,
+				E6A1121C1D2060C200C3E8F3 /* Resources */,
+				FFF71A78DCBFB5625B1AFD01 /* [CP] Embed Pods Frameworks */,
+				88056790024A4036EA8DE0D5 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E6A112241D2060C200C3E8F3 /* PBXTargetDependency */,
+			);
+			name = SensorVisualizer_ExampleTests;
+			productName = SensorVisualizer_ExampleTests;
+			productReference = E6A1121E1D2060C200C3E8F3 /* SensorVisualizer_ExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E6A1122B1D2060D400C3E8F3 /* SensorVisualizer_ExampleSnapshotTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E6A112331D2060D400C3E8F3 /* Build configuration list for PBXNativeTarget "SensorVisualizer_ExampleSnapshotTests" */;
+			buildPhases = (
+				267A8F72266055987C0F230F /* [CP] Check Pods Manifest.lock */,
+				E6A112281D2060D400C3E8F3 /* Sources */,
+				E6A112291D2060D400C3E8F3 /* Frameworks */,
+				E6A1122A1D2060D400C3E8F3 /* Resources */,
+				4687CA34B9CF37DE4DFC6237 /* [CP] Embed Pods Frameworks */,
+				508AF8269CACFB8B1879EC3B /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E6A112321D2060D400C3E8F3 /* PBXTargetDependency */,
+			);
+			name = SensorVisualizer_ExampleSnapshotTests;
+			productName = SensorVisualizer_ExampleSnapshotTests;
+			productReference = E6A1122C1D2060D400C3E8F3 /* SensorVisualizer_ExampleSnapshotTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -222,8 +413,8 @@
 		607FACC81AFB9204008FA782 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
@@ -231,9 +422,28 @@
 						DevelopmentTeam = K78G42H4U2;
 						LastSwiftMigration = 0800;
 					};
-					607FACE41AFB9204008FA782 = {
-						CreatedOnToolsVersion = 6.3.1;
+					E6A1120F1D2060AE00C3E8F3 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = K78G42H4U2;
+						DevelopmentTeamName = "Joseph Blau";
 						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 607FACCF1AFB9204008FA782;
+					};
+					E6A1121D1D2060C200C3E8F3 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = K78G42H4U2;
+						DevelopmentTeamName = "Joseph Blau";
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 607FACCF1AFB9204008FA782;
+					};
+					E6A1122B1D2060D400C3E8F3 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = K78G42H4U2;
+						DevelopmentTeamName = "Joseph Blau";
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
 				};
@@ -252,7 +462,9 @@
 			projectRoot = "";
 			targets = (
 				607FACCF1AFB9204008FA782 /* SensorVisualizer_Example */,
-				607FACE41AFB9204008FA782 /* SensorVisualizer_Tests */,
+				E6A1120F1D2060AE00C3E8F3 /* SensorVisualizer_ExampleUITests */,
+				E6A1121D1D2060C200C3E8F3 /* SensorVisualizer_ExampleTests */,
+				E6A1122B1D2060D400C3E8F3 /* SensorVisualizer_ExampleSnapshotTests */,
 			);
 		};
 /* End PBXProject section */
@@ -268,10 +480,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		607FACE31AFB9204008FA782 /* Resources */ = {
+		E6A1120E1D2060AE00C3E8F3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6A1124D1D2065FE00C3E8F3 /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6A1121C1D2060C200C3E8F3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6A1124E1D20660500C3E8F3 /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6A1122A1D2060D400C3E8F3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6A1124F1D20660F00C3E8F3 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,22 +522,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SensorVisualizer_Example/Pods-SensorVisualizer_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5AD764635FCA5F598FEB068E /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SensorVisualizer_Tests/Pods-SensorVisualizer_Tests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5F1D0E62280AA716DFE69EFB /* [CP] Check Pods Manifest.lock */ = {
+		26209023AFB74C47C0F6DFC3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -321,6 +535,81 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		267A8F72266055987C0F230F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		2CDC5A46AE62EFA7EBFB1166 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SensorVisualizer_ExampleUITests/Pods-SensorVisualizer_ExampleUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2D5CC2E11A37D299588A3836 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4687CA34B9CF37DE4DFC6237 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SensorVisualizer_ExampleSnapshotTests/Pods-SensorVisualizer_ExampleSnapshotTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		508AF8269CACFB8B1879EC3B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SensorVisualizer_ExampleSnapshotTests/Pods-SensorVisualizer_ExampleSnapshotTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		6547D644B34CE6236DD02396 /* [CP] Embed Pods Frameworks */ = {
@@ -338,6 +627,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SensorVisualizer_Example/Pods-SensorVisualizer_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		88056790024A4036EA8DE0D5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SensorVisualizer_ExampleTests/Pods-SensorVisualizer_ExampleTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		94A77EB5FEB49D2239E9640D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -353,19 +657,19 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		C2B4617BC911305958BEAD96 /* [CP] Copy Pods Resources */ = {
+		FFF71A78DCBFB5625B1AFD01 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "[CP] Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SensorVisualizer_Tests/Pods-SensorVisualizer_Tests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SensorVisualizer_ExampleTests/Pods-SensorVisualizer_ExampleTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -376,6 +680,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6125EE51D1F007D00C17D4E /* TouchesViewController.swift in Sources */,
+				E6A1120B1D205F2600C3E8F3 /* MapViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				E69951951CA21E8C00AF2300 /* OptionsTableViewController.swift in Sources */,
 				E6125EE71D1F0DE100C17D4E /* WebViewController.swift in Sources */,
@@ -383,21 +688,47 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		607FACE11AFB9204008FA782 /* Sources */ = {
+		E6A1120C1D2060AE00C3E8F3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
+				E6A112431D20644200C3E8F3 /* SensorVisualizer_ExampleUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6A1121A1D2060C200C3E8F3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6A1124A1D20644E00C3E8F3 /* SensorVisualizer_ExampleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6A112281D2060D400C3E8F3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6A1123C1D2063E100C3E8F3 /* SensorVisualizer_ExampleSnapshotTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		607FACE71AFB9204008FA782 /* PBXTargetDependency */ = {
+		E6A112161D2060AE00C3E8F3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 607FACCF1AFB9204008FA782 /* SensorVisualizer_Example */;
-			targetProxy = 607FACE61AFB9204008FA782 /* PBXContainerItemProxy */;
+			targetProxy = E6A112151D2060AE00C3E8F3 /* PBXContainerItemProxy */;
+		};
+		E6A112241D2060C200C3E8F3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 607FACCF1AFB9204008FA782 /* SensorVisualizer_Example */;
+			targetProxy = E6A112231D2060C200C3E8F3 /* PBXContainerItemProxy */;
+		};
+		E6A112321D2060D400C3E8F3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 607FACCF1AFB9204008FA782 /* SensorVisualizer_Example */;
+			targetProxy = E6A112311D2060D400C3E8F3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -507,6 +838,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0278EADD1F9B9DC8573CC943 /* Pods-SensorVisualizer_Example.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -524,6 +856,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2D95DAF52C1F22BF07A8A940 /* Pods-SensorVisualizer_Example.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -533,45 +866,115 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
-		607FACF31AFB9204008FA782 /* Debug */ = {
+		E6A112181D2060AE00C3E8F3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 53A7D2061131A1F29C792D39 /* Pods-SensorVisualizer_Tests.debug.xcconfig */;
+			baseConfigurationReference = 67426D872DFB230667E8E66B /* Pods-SensorVisualizer_ExampleUITests.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = SensorVisualizer_ExampleUITests/SupportingFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.SensorVisualizer-ExampleUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = SensorVisualizer_Example;
+			};
+			name = Debug;
+		};
+		E6A112191D2060AE00C3E8F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8AD080046431FF9A5A18F615 /* Pods-SensorVisualizer_ExampleUITests.release.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				INFOPLIST_FILE = SensorVisualizer_ExampleUITests/SupportingFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.SensorVisualizer-ExampleUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = SensorVisualizer_Example;
+			};
+			name = Release;
+		};
+		E6A112261D2060C200C3E8F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72E412D0AA78A84E1B65E282 /* Pods-SensorVisualizer_ExampleTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = Tests/Info.plist;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = SensorVisualizer_ExampleTests/SupportingFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.SensorVisualizer-ExampleTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SensorVisualizer_Example.app/SensorVisualizer_Example";
 			};
 			name = Debug;
 		};
-		607FACF41AFB9204008FA782 /* Release */ = {
+		E6A112271D2060C200C3E8F3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 923A2F9C3F56FBA54BB8A806 /* Pods-SensorVisualizer_Tests.release.xcconfig */;
+			baseConfigurationReference = BD14F71D9CB6C89723586A8B /* Pods-SensorVisualizer_ExampleTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = Tests/Info.plist;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				INFOPLIST_FILE = SensorVisualizer_ExampleTests/SupportingFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.SensorVisualizer-ExampleTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SensorVisualizer_Example.app/SensorVisualizer_Example";
+			};
+			name = Release;
+		};
+		E6A112341D2060D400C3E8F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7422D4C5122947527F9F786E /* Pods-SensorVisualizer_ExampleSnapshotTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = SensorVisualizer_ExampleSnapshotTests/SupportingFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.SensorVisualizer-ExampleSnapshotTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SensorVisualizer_Example.app/SensorVisualizer_Example";
+			};
+			name = Debug;
+		};
+		E6A112351D2060D400C3E8F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67F5E9B6DAB70F4C871D7CCB /* Pods-SensorVisualizer_ExampleSnapshotTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				INFOPLIST_FILE = SensorVisualizer_ExampleSnapshotTests/SupportingFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.SensorVisualizer-ExampleSnapshotTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SensorVisualizer_Example.app/SensorVisualizer_Example";
 			};
@@ -598,11 +1001,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "SensorVisualizer_Tests" */ = {
+		E6A112171D2060AE00C3E8F3 /* Build configuration list for PBXNativeTarget "SensorVisualizer_ExampleUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				607FACF31AFB9204008FA782 /* Debug */,
-				607FACF41AFB9204008FA782 /* Release */,
+				E6A112181D2060AE00C3E8F3 /* Debug */,
+				E6A112191D2060AE00C3E8F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E6A112251D2060C200C3E8F3 /* Build configuration list for PBXNativeTarget "SensorVisualizer_ExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E6A112261D2060C200C3E8F3 /* Debug */,
+				E6A112271D2060C200C3E8F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E6A112331D2060D400C3E8F3 /* Build configuration list for PBXNativeTarget "SensorVisualizer_ExampleSnapshotTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E6A112341D2060D400C3E8F3 /* Debug */,
+				E6A112351D2060D400C3E8F3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
