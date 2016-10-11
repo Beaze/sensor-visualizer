@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0800"
+   LastUpgradeVersion = "0720"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -49,36 +49,6 @@
                BlueprintIdentifier = "607FACE41AFB9204008FA782"
                BuildableName = "SensorVisualizer_Tests.xctest"
                BlueprintName = "SensorVisualizer_Tests"
-               ReferencedContainer = "container:SensorVisualizer.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E6A1120F1D2060AE00C3E8F3"
-               BuildableName = "SensorVisualizer_ExampleUITests.xctest"
-               BlueprintName = "SensorVisualizer_ExampleUITests"
-               ReferencedContainer = "container:SensorVisualizer.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E6A1121D1D2060C200C3E8F3"
-               BuildableName = "SensorVisualizer_ExampleTests.xctest"
-               BlueprintName = "SensorVisualizer_ExampleTests"
-               ReferencedContainer = "container:SensorVisualizer.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E6A1122B1D2060D400C3E8F3"
-               BuildableName = "SensorVisualizer_ExampleSnapshotTests.xctest"
-               BlueprintName = "SensorVisualizer_ExampleSnapshotTests"
                ReferencedContainer = "container:SensorVisualizer.xcodeproj">
             </BuildableReference>
          </TestableReference>
